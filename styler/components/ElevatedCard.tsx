@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     padding: 10,
+    color: 'green',
   },
   container: {
     padding: 10,

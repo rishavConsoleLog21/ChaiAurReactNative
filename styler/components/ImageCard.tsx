@@ -1,10 +1,13 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View, useColorScheme} from 'react-native';
 import React from 'react';
 
 const ImageCard = () => {
+  const isDarkMode = useColorScheme() === 'dark';
   return (
     <View>
-      <Text style={styles.headText}>ImageCard</Text>
+      <Text style={[styles.headText, isDarkMode ? styles.white : styles.black]}>
+        ImageCard
+      </Text>
       <View style={[styles.card, styles.cardElevated]}>
         <Image
           source={{
@@ -36,6 +39,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     paddingHorizontal: 8,
+  },
+  white: {
+    color: 'white',
+  },
+  black: {
+    color: 'black',
   },
   card: {
     backgroundColor: 'white',
