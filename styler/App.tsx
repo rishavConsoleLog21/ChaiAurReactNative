@@ -10,6 +10,7 @@ import React from 'react';
 import FlatCards from './components/FlatCards';
 import ElevatedCard from './components/ElevatedCard';
 import ImageCard from './components/ImageCard';
+import ActionCard from './components/ActionCard';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -25,7 +26,7 @@ const App = () => {
           <FlatCards />
           <ElevatedCard />
           <ImageCard />
-          <ImageCard />
+          <ActionCard />
         </View>
       </ScrollView>
     </SafeAreaView>
