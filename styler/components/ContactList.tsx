@@ -54,12 +54,16 @@ const ContactList = () => {
               source={{
                 uri: image,
               }}
-              style={{width: 60, height: 60, borderRadius: 60 / 2}}
+              style={{
+                width: 60,
+                height: 60,
+                borderRadius: 60 / 2,
+                marginRight: 10,
+              }}
             />
             <Text style={styles.userDetails}>{first_name}</Text>
-            <Text style={styles.userDetails}>{last_name}</Text>
+            <Text style={styles.userDetails}>{last_name} |</Text>
             <Text style={styles.userDetails}>{email}</Text>
-            <Text style={styles.userDetails}>{gender}</Text>
           </View>
         ))}
       </ScrollView>
@@ -78,15 +82,20 @@ const styles = StyleSheet.create({
   contactContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    padding: 5,
   },
   userCard: {
-    backgroundColor: '#FFC7C7',
-    margin: 8,
-    padding: 5,
-    borderRadius: 6,
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 3,
+    backgroundColor: '#BFECFF',
+    padding: 8,
+    borderRadius: 14,
   },
   userDetails: {
     fontSize: 12,
-    margin: 4,
+    margin: 2,
+    fontWeight: 'bold',
   },
 });
