@@ -13,27 +13,29 @@ import ImageCard from './components/ImageCard';
 import ActionCard from './components/ActionCard';
 import ContactList from './components/ContactList';
 import PasswordGenerator from './components/PasswordGenerator';
+import ColorChanger from './components/ColorChanger';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <View
-          style={
-            isDarkMode
-              ? [styles.container, styles.black]
-              : [styles.container, styles.white]
-          }>
-          {/* <FlatCards />
-          <ElevatedCard />
-          <ImageCard />
-          <ActionCard />
-          <ContactList /> */}
-          <PasswordGenerator />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    // <SafeAreaView>
+    //   <ScrollView>
+    //     <View
+    //       style={
+    //         isDarkMode
+    //           ? [styles.container, styles.black]
+    //           : [styles.container, styles.white]
+    //       }>
+    //       <FlatCards />
+    //       <ElevatedCard />
+    //       <ImageCard />
+    //       <ActionCard />
+    //       <ContactList />
+    //     </View>
+    //   </ScrollView>
+    // </SafeAreaView>
+    //       <PasswordGenerator />
+    <ColorChanger />
   );
 };
 
