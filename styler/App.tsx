@@ -12,6 +12,7 @@ import ElevatedCard from './components/ElevatedCard';
 import ImageCard from './components/ImageCard';
 import ActionCard from './components/ActionCard';
 import ContactList from './components/ContactList';
+import PasswordGenerator from './components/PasswordGenerator';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -24,11 +25,12 @@ const App = () => {
               ? [styles.container, styles.black]
               : [styles.container, styles.white]
           }>
-          <FlatCards />
+          {/* <FlatCards />
           <ElevatedCard />
           <ImageCard />
           <ActionCard />
-          <ContactList />
+          <ContactList /> */}
+          <PasswordGenerator />
         </View>
       </ScrollView>
     </SafeAreaView>
