@@ -5,8 +5,12 @@ import {
   ScrollView,
   useColorScheme,
   StyleSheet,
+  StatusBar,
+  TextInput,
+  FlatList,
+  Pressable,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import FlatCards from '../components/FlatCards';
 import ElevatedCard from '../components/ElevatedCard';
 import ImageCard from '../components/ImageCard';
@@ -15,12 +19,11 @@ import ContactList from '../components/ContactList';
 import PasswordGenerator from '../components/PasswordGenerator';
 import ColorChanger from '../components/ColorChanger';
 import RollDice from '../components/RollDice';
+import CurrenciesConverter from '../components/CurrenciesConverter';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+  //const isDarkMode = useColorScheme() === 'dark';
   //NOTE: Commenting the code in return statement will give warning in the console
-  // <SafeAreaView>
-  //   <ScrollView>
   //     <View
   //       style={
   //         isDarkMode
@@ -33,25 +36,17 @@ const App = () => {
   //       <ActionCard />
   //       <ContactList />
   //     </View>
-  //   </ScrollView>
-  // </SafeAreaView>
   //       <PasswordGenerator />
   //<ColorChanger />
-  return <RollDice />;
+  // <RollDice />;
+
+  return (
+    <>
+      <CurrenciesConverter />
+    </>
+  );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    padding: 10,
-  },
-  white: {
-    backgroundColor: 'white',
-  },
-  black: {
-    backgroundColor: 'black',
-  },
-});
+const styles = StyleSheet.create({});
 
 export default App;
