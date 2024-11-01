@@ -20,6 +20,7 @@ import PasswordGenerator from '../components/PasswordGenerator';
 import ColorChanger from '../components/ColorChanger';
 import RollDice from '../components/RollDice';
 import CurrenciesConverter from '../components/CurrenciesConverter';
+import TicTacToe from '../components/TicTacToe';
 
 const App = () => {
   //const isDarkMode = useColorScheme() === 'dark';
@@ -39,10 +40,11 @@ const App = () => {
   //       <PasswordGenerator />
   //<ColorChanger />
   // <RollDice />;
-
+  
   return (
     <>
-      <CurrenciesConverter />
+    {/* <CurrenciesConverter /> */}
+      <TicTacToe />
     </>
   );
 };
