@@ -40,10 +40,10 @@ const App = () => {
   //       <PasswordGenerator />
   //<ColorChanger />
   // <RollDice />;
-  
+
   return (
     <>
-    {/* <CurrenciesConverter /> */}
+      {/* <CurrenciesConverter /> */}
       <TicTacToe />
     </>
   );
