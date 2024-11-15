@@ -22,6 +22,21 @@ import RollDice from '../components/RollDice';
 import CurrenciesConverter from '../components/CurrenciesConverter';
 import TicTacToe from '../components/TicTacToe';
 
+//Navigation
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+//Screens
+import Home from './screens/Home';
+import Details from './screens/Details';
+
+export type RootStackParamList = {
+  Home: undefined;
+  Details: {productId: number};
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
 const App = () => {
   //const isDarkMode = useColorScheme() === 'dark';
   //NOTE: Commenting the code in return statement will give warning in the console
@@ -40,12 +55,42 @@ const App = () => {
   //       <PasswordGenerator />
   //<ColorChanger />
   // <RollDice />;
+  // <CurrenciesConverter />
+  // <TicTacToe />
 
   return (
-    <>
-      {/* <CurrenciesConverter /> */}
-      <TicTacToe />
-    </>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: 'Home',
+            headerStyle: {
+              backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{
+            title: 'Product Details',
+            headerStyle: {
+              backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
