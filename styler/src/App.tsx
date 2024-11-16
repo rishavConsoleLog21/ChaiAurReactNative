@@ -32,7 +32,7 @@ import Details from './screens/Details';
 
 export type RootStackParamList = {
   Home: undefined;
-  Details: {productId: number};
+  Details: {product: Product};
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -59,20 +59,45 @@ const App = () => {
   // <TicTacToe />
 
   return (
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen
+    //       name="Home"
+    //       component={Home}
+    //       options={{
+    //         title: 'Home',
+    //         headerStyle: {
+    //           backgroundColor: '#f4511e',
+    //         },
+    //         headerTintColor: '#fff',
+    //         headerTitleStyle: {
+    //           fontWeight: 'bold',
+    //         },
+    //       }}
+    //     />
+    //     <Stack.Screen
+    //       name="Details"
+    //       component={Details}
+    //       options={{
+    //         title: 'Product Details',
+    //         headerStyle: {
+    //           backgroundColor: '#f4511e',
+    //         },
+    //         headerTintColor: '#fff',
+    //         headerTitleStyle: {
+    //           fontWeight: 'bold',
+    //         },
+    //       }}
+    //     />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
           name="Home"
           component={Home}
           options={{
-            title: 'Home',
-            headerStyle: {
-              backgroundColor: '#f4511e',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
+            title: 'Trending Products',
           }}
         />
         <Stack.Screen
