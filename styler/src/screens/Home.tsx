@@ -1,28 +1,45 @@
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {
+  Button,
+  FlatList,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React from 'react';
 
 // Navigation
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../App';
+import ProductItem from '../components/ProductItem';
+import Separator from '../components/Separator';
+
+// Data
+import {PRODUCTS_LIST} from '../data/constants';
 
 type HomeProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 const Home = ({navigation}: HomeProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.smallText}>Home</Text>
-      <Button
-        title="Go to details"
-        //NOTE: 3 ways to navigate to another screen
-        onPress={() => navigation.navigate('Details', {productId: 21})}
-        // onPress={() => navigation.navigate('Details')}
-        // onPress={() => navigation.push('Details', {productId: 21})} //NOTE: push is used to push the same screen again/callbackHell/profileHell(instagram)
+      <FlatList
+        data={PRODUCTS_LIST}
+        keyExtractor={item => item.id}
+        ItemSeparatorComponent={Separator}
+        renderItem={item => (
+          <Pressable
+            onPress={() => {
+              navigation.navigate('Details', {
+                product: item.item,
+              });
+            }}>
+            <ProductItem product={item.item} />
+          </Pressable>
+        )}
       />
     </View>
   );
 };
-
-export default Home;
 
 const styles = StyleSheet.create({
   container: {
@@ -34,3 +51,5 @@ const styles = StyleSheet.create({
     color: 'red',
   },
 });
+
+export default Home;
